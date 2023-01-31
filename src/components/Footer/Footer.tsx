@@ -6,7 +6,7 @@ const Footer: React.FC = () => (
       <LdTypo className="text-wht mb-ld-12">
         Checkout the source code on
         <a
-          href="https://github.com/emdgroup-liquid/liquid-sandbox-react-tailwind"
+          href="https://github.com/emdgroup-liquid/liquid-sandbox-cra-tailwind"
           className="ml-ld-4 inline-flex items-center text-thm-secondary"
         >
           GitHub
