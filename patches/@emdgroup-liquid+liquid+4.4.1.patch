@@ -1,0 +1,70 @@
+diff --git a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/createComponent.js b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/createComponent.js
+index de1c4e6..c21e7f0 100644
+--- a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/createComponent.js
++++ b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/createComponent.js
+@@ -10,7 +10,7 @@ var __rest = (this && this.__rest) || function (s, e) {
+     return t;
+ };
+ import React, { createElement } from 'react';
+-import { attachProps, camelToDashCase, createForwardRef, dashToPascalCase, isCoveredByReact, mergeRefs, } from './utils';
++import { attachProps, camelToDashCase, createForwardRef, dashToPascalCase, isCoveredByReact, mergeRefs, } from './utils/index.js';
+ export const createReactComponent = (tagName, ReactComponentContext, manipulatePropsFunction, defineCustomElement) => {
+     if (defineCustomElement !== undefined) {
+         defineCustomElement();
+diff --git a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/createOverlayComponent.js b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/createOverlayComponent.js
+index e9f6e20..61c4ebd 100644
+--- a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/createOverlayComponent.js
++++ b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/createOverlayComponent.js
+@@ -11,7 +11,7 @@ var __rest = (this && this.__rest) || function (s, e) {
+ };
+ import React from 'react';
+ import ReactDOM from 'react-dom';
+-import { attachProps, dashToPascalCase, defineCustomElement, setRef, } from './utils';
++import { attachProps, dashToPascalCase, defineCustomElement, setRef, } from './utils/index.js';
+ export const createOverlayComponent = (tagName, controller, customElement) => {
+     defineCustomElement(tagName, customElement);
+     const displayName = dashToPascalCase(tagName);
+diff --git a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/index.js b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/index.js
+index 85e81ad..611f53c 100644
+--- a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/index.js
++++ b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/index.js
+@@ -1,2 +1,2 @@
+-export { createReactComponent } from './createComponent';
+-export { createOverlayComponent } from './createOverlayComponent';
++export { createReactComponent } from './createComponent.js';
++export { createOverlayComponent } from './createOverlayComponent.js';
+diff --git a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/utils/attachProps.js b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/utils/attachProps.js
+index b2576df..ef22ea4 100644
+--- a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/utils/attachProps.js
++++ b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/utils/attachProps.js
+@@ -1,4 +1,4 @@
+-import { camelToDashCase } from './case';
++import { camelToDashCase } from './case.js';
+ export const attachProps = (node, newProps, oldProps = {}) => {
+     // some test frameworks don't render DOM elements, so we test here to make sure we are dealing with DOM first
+     if (node instanceof Element) {
+diff --git a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/utils/index.js b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/utils/index.js
+index 8675163..5a78fbc 100644
+--- a/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/utils/index.js
++++ b/node_modules/@emdgroup-liquid/liquid/dist/react-component-lib/utils/index.js
+@@ -29,5 +29,5 @@ export const defineCustomElement = (tagName, customElement) => {
+         customElements.define(tagName, customElement);
+     }
+ };
+-export * from './attachProps';
+-export * from './case';
++export * from './attachProps.js';
++export * from './case.js';
+diff --git a/node_modules/@emdgroup-liquid/liquid/dist/react.js b/node_modules/@emdgroup-liquid/liquid/dist/react.js
+index 19bf1ef..85b74ae 100644
+--- a/node_modules/@emdgroup-liquid/liquid/dist/react.js
++++ b/node_modules/@emdgroup-liquid/liquid/dist/react.js
+@@ -1,7 +1,7 @@
+ /* eslint-disable */
+ /* tslint:disable */
+ /* auto-generated react proxies */
+-import { createReactComponent } from './react-component-lib';
++import { createReactComponent } from './react-component-lib/index.js';
+ export const LdAccordion = /*@__PURE__*/ createReactComponent('ld-accordion');
+ export const LdAccordionPanel = /*@__PURE__*/ createReactComponent('ld-accordion-panel');
+ export const LdAccordionSection = /*@__PURE__*/ createReactComponent('ld-accordion-section');

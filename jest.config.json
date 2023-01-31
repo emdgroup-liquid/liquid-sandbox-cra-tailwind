@@ -1,0 +1,10 @@
+{
+  "extensionsToTreatAsEsm": [".ts", ".tsx"],
+  "setupFilesAfterEnv": ["<rootDir>/src/setupTests.ts"],
+  "testEnvironment": "jsdom",
+  "transform": {
+    "^.+\\.(ts|tsx|js|jsx)$" : ["ts-jest", {
+      "useESM": true
+    }]
+  }
+}
