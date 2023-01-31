@@ -42,9 +42,6 @@
     "eject": "react-scripts eject",
     "postinstall": "patch-package ; cp -r ./node_modules/@emdgroup-liquid/liquid/dist/liquid/assets/* ./public/liquid/assets/"
   },
-  "stackblitz": {
-    "startCommand": "npm run build && npm run serve"
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
