@@ -10,7 +10,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@emdgroup-liquid/liquid": "^4.4.1",
+    "@emdgroup-liquid/liquid": "^4.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.0"
@@ -26,7 +26,6 @@
     "@types/react-dom": "^18.0.10",
     "cross-env": "^7.0.3",
     "jest-environment-jsdom": "^29.4.1",
-    "patch-package": "^6.5.1",
     "prettier": "^2.8.3",
     "react-scripts": "5.0.1",
     "serve": "^14.2.0",
@@ -40,7 +39,7 @@
     "serve": "serve build/",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "eject": "react-scripts eject",
-    "postinstall": "patch-package ; cp -r ./node_modules/@emdgroup-liquid/liquid/dist/liquid/assets/* ./public/liquid/assets/"
+    "postinstall": "cp -r ./node_modules/@emdgroup-liquid/liquid/dist/liquid/assets/* ./public/liquid/assets/"
   },
   "eslintConfig": {
     "extends": [
