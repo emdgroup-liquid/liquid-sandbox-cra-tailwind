@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { LdIcon, LdTypo } from '@emdgroup-liquid/liquid/dist/react'
 
 const Footer: React.FC = () => (
